@@ -81049,11 +81049,13 @@ var HomePage = (function () {
     function HomePage(navCtrl) {
         this.navCtrl = navCtrl;
     }
+    // Generates number between 1 and 100 and rounds so there are no decimals
     HomePage.prototype.rollDice = function () {
-        var rand = Math.floor((Math.random() * 100) + 1);
+        var rand = Math.floor((Math.random() * 6) + 1);
         console.log(rand);
         return rand;
     };
+    // Causes rollDice to activate upon button click in html and takes the result and assigns it to rollValue
     HomePage.prototype.onClick = function () {
         this.rollValue = this.rollDice();
     };

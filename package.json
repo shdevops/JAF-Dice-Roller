@@ -26,11 +26,14 @@
     "ionic-angular": "2.0.0-rc.1",
     "ionic-native": "2.2.3",
     "ionicons": "3.0.0",
+    "request": "^2.75.0",
     "rxjs": "5.0.0-beta.12",
     "zone.js": "0.6.21"
   },
   "devDependencies": {
     "@ionic/app-scripts": "^0.0.36",
+    "jasmine": "^2.5.2",
+    "qunitjs": "^2.0.1",
     "typescript": "^2.0.3"
   },
   "description": "JAF-Dice-Roller: An Ionic project",
