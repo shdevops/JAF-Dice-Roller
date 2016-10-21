@@ -1,14 +1,13 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>JAFDR</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title text-center="JAFDR">JAFDR</ion-title>
+    </ion-navbar>
 </ion-header>
 <ion-content padding>
-  <h2>JAF Dice Roller</h2>
-  <ion-list>
-      <ion-item>
-          <ion-label>What kind of dice?</ion-label>
-          <ion-select [(ngModel)]="diceType" (ngModelChange)="updateDiceType()">
+    <ion-list>
+        <ion-item>
+            <ion-label>What kind of dice?</ion-label>
+            <ion-select [(ngModel)]="diceType" (ngModelChange)="updateDiceType()">
               <ion-option value=4>d4</ion-option>
               <ion-option value=6>d6</ion-option>
               <ion-option value=8>d8</ion-option>
@@ -16,17 +15,13 @@
               <ion-option value=12>d12</ion-option>
               <ion-option value=20>d20</ion-option>
               <ion-option value=100>d100</ion-option>
-          </ion-select>
-      </ion-item>
-  </ion-list>
-    <ion-grid>
-        <ion-row>
-            <div>
-                <button ion-button full (click)="onDiceButtonClick()">Roll Dice!</button>
-            </div>
-        </ion-row>
-        <ion-row>
-            <h3>The result is: {{rollValue}}</h3>
-        </ion-row>
-    </ion-grid>
+            </ion-select>
+        </ion-item>
+    </ion-list>
+    <div>
+        <button ion-button full (click)="onDiceButtonClick()">Roll Dice!</button>
+    </div>
+    <div class="animated shake">
+        <h1 text-center padding-top>{{rollValue}}</h1>
+    </div>
 </ion-content>

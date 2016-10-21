@@ -28,7 +28,6 @@ export class HomePage {
     }
 
     updateDiceType() {
-        console.log('DICETYPE: ' + this.diceType);
        return this.diceType;
     }
 }
