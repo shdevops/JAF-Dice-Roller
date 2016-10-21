@@ -1,12 +1,10 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>JAFDR</ion-title>
   </ion-navbar>
 </ion-header>
-
 <ion-content padding>
   <h2>JAF Dice Roller</h2>
-
   <ion-list>
       <ion-item>
           <ion-label>What kind of dice?</ion-label>
@@ -21,11 +19,14 @@
           </ion-select>
       </ion-item>
   </ion-list>
-
-  <div >
-    <button ion-button (click)="onDiceButtonClick()">Roll Dice!</button>
-  </div>
-
-  <div>The result is: {{rollValue}}</div>
-
+    <ion-grid>
+        <ion-row>
+            <div>
+                <button ion-button full (click)="onDiceButtonClick()">Roll Dice!</button>
+            </div>
+        </ion-row>
+        <ion-row>
+            <h3>The result is: {{rollValue}}</h3>
+        </ion-row>
+    </ion-grid>
 </ion-content>

@@ -7,29 +7,28 @@ import { NavController } from 'ionic-angular';
     })
 
 export class HomePage {
-    public rollValue: number;
     public diceType: number;
+    public rollValue: number;
 
     constructor(
     public navCtrl: NavController
 
 ) {
+    this.diceType = 4;
 
 }
-    // Generates number between 1 and 100 and rounds so there are no decimals
-    rollDice() {
-        var rand = Math.floor((Math.random() * this.diceType) + 1);
-        console.log(rand);
-        return rand;
-    }
 
-    // Causes rollDice to activate upon button click in html and takes the result and assigns it to rollValue
     onDiceButtonClick() {
         this.rollValue = this.rollDice();
     }
 
+    rollDice() {
+        var rand = Math.floor((Math.random() * this.diceType) + 1);
+        return rand;
+    }
+
     updateDiceType() {
-        this.diceType = this.diceType;
-        console.log(this.diceType);
+        console.log('DICETYPE: ' + this.diceType);
+       return this.diceType;
     }
 }
