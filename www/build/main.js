@@ -81051,17 +81051,21 @@ var HomePage = (function () {
     }
     // Generates number between 1 and 100 and rounds so there are no decimals
     HomePage.prototype.rollDice = function () {
-        var rand = Math.floor((Math.random() * 6) + 1);
+        var rand = Math.floor((Math.random() * this.diceType) + 1);
         console.log(rand);
         return rand;
     };
     // Causes rollDice to activate upon button click in html and takes the result and assigns it to rollValue
-    HomePage.prototype.onClick = function () {
+    HomePage.prototype.onDiceButtonClick = function () {
         this.rollValue = this.rollDice();
+    };
+    HomePage.prototype.updateDiceType = function () {
+        this.diceType = this.diceType;
+        console.log(this.diceType);
     };
     HomePage = __decorate$109([
         Component({
-            selector: 'page-home',template:/*ion-inline-start:"/home/devops/Dev/JAF-Dice-Roller/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Home</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <h2>JAF Dice Roller</h2>\n\n  <div >\n    <button ion-button (click)="onClick()">Roll Dice!</button>\n  </div>\n\n  <div>The result is: {{rollValue}}</div>\n\n</ion-content>\n'/*ion-inline-end:"/home/devops/Dev/JAF-Dice-Roller/src/pages/home/home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"/home/devops/Dev/JAF-Dice-Roller/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Home</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <h2>JAF Dice Roller</h2>\n\n  <ion-list>\n      <ion-item>\n          <ion-label>What kind of dice?</ion-label>\n          <ion-select [(ngModel)]="diceType" (ngModelChange)="updateDiceType()">\n              <ion-option value=4>d4</ion-option>\n              <ion-option value=6>d6</ion-option>\n              <ion-option value=8>d8</ion-option>\n              <ion-option value=10>d10</ion-option>\n              <ion-option value=12>d12</ion-option>\n              <ion-option value=20>d20</ion-option>\n              <ion-option value=100>d100</ion-option>\n          </ion-select>\n      </ion-item>\n  </ion-list>\n\n  <div >\n    <button ion-button (click)="onDiceButtonClick()">Roll Dice!</button>\n  </div>\n\n  <div>The result is: {{rollValue}}</div>\n\n</ion-content>\n'/*ion-inline-end:"/home/devops/Dev/JAF-Dice-Roller/src/pages/home/home.html"*/
         }), 
         __metadata$3('design:paramtypes', [NavController])
     ], HomePage);

@@ -7,8 +7,23 @@
 <ion-content padding>
   <h2>JAF Dice Roller</h2>
 
+  <ion-list>
+      <ion-item>
+          <ion-label>What kind of dice?</ion-label>
+          <ion-select [(ngModel)]="diceType" (ngModelChange)="updateDiceType()">
+              <ion-option value=4>d4</ion-option>
+              <ion-option value=6>d6</ion-option>
+              <ion-option value=8>d8</ion-option>
+              <ion-option value=10>d10</ion-option>
+              <ion-option value=12>d12</ion-option>
+              <ion-option value=20>d20</ion-option>
+              <ion-option value=100>d100</ion-option>
+          </ion-select>
+      </ion-item>
+  </ion-list>
+
   <div >
-    <button ion-button (click)="onClick()">Roll Dice!</button>
+    <button ion-button (click)="onDiceButtonClick()">Roll Dice!</button>
   </div>
 
   <div>The result is: {{rollValue}}</div>
